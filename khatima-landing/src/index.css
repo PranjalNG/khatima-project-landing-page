@@ -1,11 +1,29 @@
 @import "tailwindcss";
 
-@theme {
-  --color-brand-light: #e8f5e9;
-  --color-brand: #27ae60;
-  --color-brand-dark: #1e8449;
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #0a1a12;
+  color: #d4f0df;
 }
 
-body {
-  background-color: #f9fafb;
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden; 
+}
+
+/* Subtle Ambient Glows */
+#root::after {
+  content: "";
+  position: absolute;
+  top: -100px; left: 20%; width: 500px; height: 500px;
+  background-color: #122e1f;
+  border-radius: 50%;
+  filter: blur(100px);
+  opacity: 0.4;
+  z-index: -1;
+  pointer-events: none;
 }
